@@ -1,4 +1,4 @@
-# Nanopore Guide Deisgn
+# Nanopore Guide Design
 ## Nextflow implementation for generating, filtering, and prioritizing candidate guide RNA sequences for Nanopore sequencing
 
 ## Requirements
