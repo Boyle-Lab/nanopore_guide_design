@@ -29,7 +29,7 @@ output_files=glob.glob(f'{output_path}/*.txt')
 
 for output_file in output_files:
     name = output_file.split('.txt')[0]
-    filtered_file = f'{name}_filtered.tsv'
+    filtered_file = f'{name}.filtered.tsv'
     bedfile = f'{name}.bed'
     output_table = pd.read_table(output_file, sep="\t", names=['ID','Sequence','Location','Strand','GC','SelfComp','mm0','mm1','mm2','mm3','EfficiencyScore'])
     ## Filter CHOPCHOP output

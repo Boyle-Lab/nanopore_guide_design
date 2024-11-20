@@ -66,13 +66,13 @@ process parallel_crispron{
 
     script:
     """
-    ls "$output"/*.upstream.bed| parallel -j "$threads" $run_crispron_path {} "$output" upstream "$bedtools_path" "$crispron_path"
-    ls "$output"/*.downstream.bed | parallel -j "$threads" $run_crispron_path {} "$output" downstream "$bedtools_path" "$crispron_path"
+    ls "$output"/*.upstream.bed| parallel -j "$threads" $run_crispron_path {} "$output" "$distance" "$bedtools_path" "$crispron_path"
+    ls "$output"/*.downstream.bed | parallel -j "$threads" $run_crispron_path {} "$output" "$distance" "$bedtools_path" "$crispron_path"
 
     cat "$output"/*high_scoring_guides.*bed > "$output"/output_guides."$distance"bp.bed
 
-    rm "$output"/*downstream*
-    rm "$output"/*upstream*
+    rm "$output"/*.downstream.*
+    rm "$output"/*upstream.*
     """
 
 }
