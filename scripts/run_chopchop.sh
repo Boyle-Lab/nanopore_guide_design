@@ -1,9 +1,10 @@
 #!/bin/bash
 
-DISTANCE="$2"
-FLANK="$3"
-OUTPUT="$4"
-CHOPCHOP="$5"
+MIN_DISTANCE="$2"
+MAX_DISTANCE="$3"
+FLANK="$4"
+OUTPUT="$5"
+CHOPCHOP="$6"
 
 if [ ! -d "$OUTPUT" ]; then
     mkdir -p "$OUTPUT"
@@ -29,11 +30,11 @@ else
 fi
 ############################## Makes regions and pass to chopchop
 
-upstream_coods_start=$(($col2_int - $DISTANCE - $FLANK))
-upstream_coods_end=$(($col2_int - $DISTANCE + $FLANK))
+upstream_coods_start=$(($col2_int - $MAX_DISTANCE - $FLANK))
+upstream_coods_end=$(($col2_int - $MIN_DISTANCE + $FLANK))
 
-downstream_coods_start=$(($col3_int + $DISTANCE-$FLANK))
-downstream_coods_end=$(($col3_int + $DISTANCE+$FLANK))
+downstream_coods_start=$(($col3_int + $MIN_DISTANCE-$FLANK))
+downstream_coods_end=$(($col3_int + $MAX_DISTANCE+$FLANK))
 
 LOC="$col1"."$col2_int"."$col3_int"
 

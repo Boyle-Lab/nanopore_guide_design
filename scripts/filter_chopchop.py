@@ -4,6 +4,7 @@ import pandas as pd
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--path")
+parser.add_argument("--distance")
 parser.add_argument("--min_gc", type=int)
 parser.add_argument("--max_gc", type=int)
 parser.add_argument("--max_self_complementarity", type=int)
@@ -15,6 +16,7 @@ parser.add_argument("--max_mm3", type=int)
 
 args = parser.parse_args()
 
+distance = args.distance
 min_gc=args.min_gc
 max_gc=args.max_gc
 max_self_complementarity=args.max_self_complementarity
